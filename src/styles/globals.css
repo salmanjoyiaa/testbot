@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { 
+  height: 100%; 
+  overflow-x: hidden; 
+  overflow-y: auto;
+}
+
+body {
+  @apply bg-gradient-to-br from-slate-50 via-white to-blue-50;
+}
+
+/* Premium Scrollbar styling */
+*::-webkit-scrollbar { 
+  width: 10px; 
+  height: 10px; 
+}
+*::-webkit-scrollbar-thumb { 
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.5), rgba(99, 102, 241, 0.5));
+  border-radius: 9999px; 
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.2s ease;
+}
+*::-webkit-scrollbar-thumb:hover { 
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.7), rgba(99, 102, 241, 0.7));
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-track { 
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 9999px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Chat bubble styling - removed auto-animation to prevent re-animation */
+.bubble {
+  position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Input field smooth transitions */
+textarea {
+  transition: all 0.2s ease;
+}
+
+textarea:focus {
+  @apply ring-2 ring-blue-400/50;
+}
+
+/* Button smooth interactions */
+button {
+  transition: all 0.2s ease;
+}
+
+button:active {
+  @apply scale-95;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Pulse animation for loading */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Animate-in utility classes */
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.slide-in-from-bottom-4 {
+  animation: slideInFromBottom 0.3s ease-out;
+}
+
+.slide-in-from-top-2 {
+  animation: slideInFromTop 0.2s ease-out;
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
