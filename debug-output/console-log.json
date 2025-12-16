@@ -1,0 +1,6 @@
+[
+  {
+    "level": "error",
+    "text": "Error: net::ERR_CONNECTION_REFUSED at http://localhost:5174"
+  }
+]
